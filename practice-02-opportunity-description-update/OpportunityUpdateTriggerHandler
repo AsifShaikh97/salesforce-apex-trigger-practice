@@ -1,0 +1,9 @@
+public class OpportunityTriggerHandler{
+    public static void updateOpportunityDescription(List<Opportunity> oppList){
+        for(Opportunity opp:oppList){
+            if(opp.amount > 100000){
+                opp.description = 'High Value Opportunity';
+            } 
+        }
+    }
+}
