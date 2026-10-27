@@ -1,4 +1,4 @@
-public class AccountTrigger on Account (before insert) {
+Trigger AccountTrigger on Account (before insert) {
     if(Trigger.isInsert && Trigger.isBefore){
         AccountTriggerHandler.updateAccountRating(trigger.new);
     }
