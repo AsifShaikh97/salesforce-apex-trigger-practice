@@ -1,0 +1,5 @@
+public class AccountShippingAddressCopyTrigger on Account (before insert){
+    if(Trigger.isInsert && Trigger.isBefore){
+        AccountShippingAddressCopyTriggerHandler.copyBillingToShipping(trigger.new);
+    }
+}

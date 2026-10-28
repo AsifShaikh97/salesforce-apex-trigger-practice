@@ -1,0 +1,15 @@
+public class AccountShippingAddressCopyTriggerHandler{
+    public static void copyBillingToShipping(List<Account> accList){
+        for(Account acc:accList){
+            if(acc.copybillingtoshipping__c == true &&
+                acc.billingstreet != null && acc.billingcity != null && acc.billingstate != null
+             && acc.billingpostalcode != null && acc.billingcountry != null){
+                acc.shippingstreet = acc.billingstreet;
+                acc.shippingcity = acc.billingcity;
+                acc.shippingstate = acc.billingstate;
+                acc.shippingpostalcode = acc.billingpostalcode;
+                acc.shippingcountry = acc.billingcountry;
+            }
+        }
+    }
+}
